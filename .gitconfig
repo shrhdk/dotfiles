@@ -1,0 +1,29 @@
+[core]
+	editor = vim
+	pager = less
+	autocrlf = input
+[diff]
+	algorithm = histogram
+[color]
+	ui = auto
+	diff = auto
+	grep = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	f = fetch -p
+	pull = fetch -p
+	st = status
+	br = branch
+	ci = commit
+	ck = checkout
+	re = remote -v
+	diffc = diff --cached
+	logp = log -p
+	logs = log --stat
+	logg = log --graph --date=format:'%y-%m-%d(%a) %T' --pretty=format:'%h %C(green)%cd %C(blue)%ad %C(green)%cn %C(blue)%an %C(green)%ce %C(blue)%ae %C(reset)%s'
+	loga = log --graph --all --color --pretty='%x09%h %s %C(red)%d%C(reset)'
+#[user]
+#	email = 
+#	name = 
