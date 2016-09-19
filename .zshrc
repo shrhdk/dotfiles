@@ -36,7 +36,7 @@ alias pk="peco-pkill"
 
 # Go
 
-export GOPATH=~/dev
+export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 alias gcd="cd $GOPATH"
 
