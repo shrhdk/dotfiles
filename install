@@ -7,4 +7,3 @@ do
         ln -Fis "$PWD/$dotfile" $HOME
     fi
 done
-
