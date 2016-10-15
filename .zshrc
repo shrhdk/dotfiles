@@ -14,6 +14,18 @@ alias ls="ls -G"
 alias diff="colordiff"
 alias less="less -R"
 
+# peco
+
+p() { peco | while read LINE; do $@ $LINE; done }
+
+# peco-src
+function peco-src() {
+	cd $(ghq root)/$(ghq list | peco)
+	zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
+
 # peco-history-search
 function peco-select-history() {
 	BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
@@ -36,9 +48,8 @@ alias pk="peco-pkill"
 
 # Go
 
-export GOPATH=~/go
+export GOPATH=~
 export PATH=$PATH:$GOPATH/bin
-alias gcd="cd $GOPATH"
 
 # Travis CI
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
@@ -46,3 +57,4 @@ alias gcd="cd $GOPATH"
 # SDKMAN
 export SDKMAN_DIR=~/.sdkman
 [ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
+
